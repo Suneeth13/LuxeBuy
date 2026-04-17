@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import ProductGrid from './components/ProductGrid';
 import Checkout from './components/Checkout';
@@ -47,14 +47,28 @@ const conciergeEdits = [
 ];
 
 function App() {
-  const [products] = useState(productsData);
+  const [products, setProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [cart, setCart] = useState([]);
   const [showCheckout, setShowCheckout] = useState(false);
   const [activeEditId, setActiveEditId] = useState('all');
   const [assistantSeed, setAssistantSeed] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('/api/products');
+        const data = await response.json();
+        setProducts(data);
+      } catch (err) {
+        console.error('Error fetching products:', err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchProducts();
+
     const savedCart = localStorage.getItem('luxeCart');
     if (savedCart) {
       try {

@@ -34,7 +34,7 @@ const Assistant = ({ suggestedPrompt = '' }) => {
   }, [suggestedPrompt]);
 
   const handleSend = async () => {
-    if (!input.trim() || !apiKey) return;
+    if (!input.trim()) return;
 
     const userMessage = { role: 'user', content: input };
     setMessages(prev => [...prev, userMessage]);
@@ -42,63 +42,27 @@ const Assistant = ({ suggestedPrompt = '' }) => {
     setIsTyping(true);
 
     try {
-      // Initialize Gemini API
-      const genAI = new GoogleGenerativeAI(apiKey);
-      const modelCandidates = ['gemini-1.5-flash', 'gemini-1.5-pro'];
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: messages,
+          input: input
+        })
+      });
 
-      // Create context prompt combining system instructions and chat history
-      const systemPrompt = `You are an elite, high-end personal shopping assistant for "LuxeBuy", a luxury retail platform. 
-Keep your answers concise, elegant, and focused on fashion, accessories, and high-end retail. 
-Respond in plain text only. Do not use markdown, bold formatting, bullet points, or asterisks.
-Current product catalog includes: Onyx Silk Blazer ($1,200), Golden Hour Timepiece ($3,450), Ivory Cashmere Coat ($2,100), Sable Leather Tote ($890), Azure Silk Gown ($4,500), Obsidian Chelsea Boots ($650).
-Please answer the user's latest query thoughtfully.`;
-
-      const chatHistory = messages
-        .slice(1) // Skip welcome message
-        .map(m => `${m.role === 'user' ? 'Client' : 'Assistant'}: ${m.content}`)
-        .join('\n');
-      
-      const fullPrompt = `${systemPrompt}\n\nChat History:\n${chatHistory}\nClient: ${input}\nAssistant:`;
-
-      let text = '';
-      let lastError = null;
-
-      for (const modelName of modelCandidates) {
-        try {
-          const model = genAI.getGenerativeModel({ model: modelName });
-          const result = await model.generateContent(fullPrompt);
-          text = toPlainText(result.response.text());
-          break;
-        } catch (error) {
-          lastError = error;
-          const message = error?.message || '';
-          const isHighDemandError = message.includes('[503') || /high demand/i.test(message);
-          const hasMoreFallbacks = modelName !== modelCandidates[modelCandidates.length - 1];
-
-          if (!(isHighDemandError && hasMoreFallbacks)) {
-            throw error;
-          }
-        }
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to connect to assistant backend');
       }
 
-      if (!text) {
-        throw lastError || new Error('No response received from Gemini.');
-      }
-
-      setMessages(prev => [...prev, { role: 'assistant', content: text }]);
+      const data = await response.json();
+      setMessages(prev => [...prev, { role: 'assistant', content: data.content }]);
     } catch (error) {
-      console.error("Gemini API Error:", error);
-      const errorMessage = error?.message || 'Unknown Gemini API error.';
-      setMessages(prev => [...prev, { role: 'assistant', content: `My apologies, I am having trouble connecting right now. Error: ${errorMessage}` }]);
+      console.error("Assistant Error:", error);
+      setMessages(prev => [...prev, { role: 'assistant', content: `My apologies, I am having trouble connecting right now. ${error.message}` }]);
     } finally {
       setIsTyping(false);
-    }
-  };
-
-  const handleConfigSubmit = (e) => {
-    e.preventDefault();
-    if (apiKey.trim()) {
-      setIsConfiguring(false);
     }
   };
 
@@ -122,48 +86,28 @@ Please answer the user's latest query thoughtfully.`;
           </div>
 
           <div className="chat-body" style={{ position: 'relative' }}>
-            {isConfiguring ? (
-              <div className="config-pane">
-                <p>Please provide your Google Gemini API Key to enable the intelligence engine.</p>
-                <form onSubmit={handleConfigSubmit}>
-                  <input 
-                    type="password" 
-                    placeholder="AIzaSy..." 
-                    value={apiKey}
-                    onChange={(e) => setApiKey(e.target.value)}
-                    required
-                  />
-                  <button type="submit">Activate Assistant</button>
-                </form>
+            {messages.map((msg, i) => (
+              <div key={i} className={`message-bubble ${msg.role}`}>
+                {msg.content}
               </div>
-            ) : (
-              <>
-                {messages.map((msg, i) => (
-                  <div key={i} className={`message-bubble ${msg.role}`}>
-                    {msg.content}
-                  </div>
-                ))}
-                {isTyping && <div className="typing-loader"><span></span><span></span><span></span></div>}
-                <div ref={chatEndRef} />
-              </>
-            )}
+            ))}
+            {isTyping && <div className="typing-loader"><span></span><span></span><span></span></div>}
+            <div ref={chatEndRef} />
           </div>
 
-          {!isConfiguring && (
-            <div className="chat-input-area">
-              <input 
-                ref={promptInputRef}
-                type="text" 
-                placeholder="Ask me anything..." 
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-              />
-              <button className="send-btn" onClick={handleSend}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-              </button>
-            </div>
-          )}
+          <div className="chat-input-area">
+            <input 
+              ref={promptInputRef}
+              type="text" 
+              placeholder="Ask me anything..." 
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+            />
+            <button className="send-btn" onClick={handleSend}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            </button>
+          </div>
         </div>
       )}
 

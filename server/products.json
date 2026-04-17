@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Onyx Silk Blazer",
+    "price": "$1,200",
+    "category": "Menswear",
+    "image": "/products/onyx-silk-blazer.svg"
+  },
+  {
+    "id": 2,
+    "name": "Golden Hour Timepiece",
+    "price": "$3,450",
+    "category": "Accessories",
+    "image": "/products/golden-hour-timepiece.svg"
+  },
+  {
+    "id": 3,
+    "name": "Ivory Cashmere Coat",
+    "price": "$2,100",
+    "category": "Womenswear",
+    "image": "/products/ivory-cashmere-coat.svg"
+  },
+  {
+    "id": 4,
+    "name": "Sable Leather Tote",
+    "price": "$890",
+    "category": "Accessories",
+    "image": "/products/sable-leather-tote.svg"
+  },
+  {
+    "id": 5,
+    "name": "Azure Silk Gown",
+    "price": "$4,500",
+    "category": "Evening Wear",
+    "image": "/products/azure-silk-gown.svg"
+  },
+  {
+    "id": 6,
+    "name": "Obsidian Chelsea Boots",
+    "price": "$650",
+    "category": "Footwear",
+    "image": "/products/obsidian-chelsea-boots.svg"
+  }
+]
