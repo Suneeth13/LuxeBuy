@@ -1,9 +1,9 @@
 # Step 1: Build the Vite App
-FROM node:18-alpine AS builder
+FROM node:22-alpine AS builder
 
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 COPY . .
 # Set build arguments if needed, e.g., ARG VITE_GEMINI_API_KEY
 RUN npm run build

@@ -44,7 +44,7 @@ const Assistant = ({ suggestedPrompt = '' }) => {
     try {
       // Initialize Gemini API
       const genAI = new GoogleGenerativeAI(apiKey);
-      const modelCandidates = ['gemini-2.5-flash', 'gemini-2.5-flash-lite'];
+      const modelCandidates = ['gemini-1.5-flash', 'gemini-1.5-pro'];
 
       // Create context prompt combining system instructions and chat history
       const systemPrompt = `You are an elite, high-end personal shopping assistant for "LuxeBuy", a luxury retail platform. 
