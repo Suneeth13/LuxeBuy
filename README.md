@@ -28,33 +28,36 @@ Built on a foundation of **Glassmorphism** and **Luxury Dark Mode**:
 
 ## Quick Setup
 1. `npm install`
-2. Copy .env.example to .env, add Gemini API key.
-3. `npm run dev` - http://localhost:5173/
-4. `npm run build` for production.
-5. Docker: `docker build -t luxebuy . && docker run -p 80:80 luxebuy`
+2. Copy .env.example to .env, add `GEMINI_API_KEY`.
+3. `npm run dev` - Frontend development (http://localhost:5173/)
+4. `npm run build` - Build frontend assets.
+5. `npm start` - Run the production Node.js server (http://localhost:8080/)
+6. Docker: `docker build -t luxebuy . && docker run -p 8080:8080 -e GEMINI_API_KEY=your_key luxebuy`
 
 ## Features Added
+- Node.js / Express Backend for secure API handling
 - Search & Filter
 - Concierge Edit for scenario-based discovery
 - Cart with quantity/remove
-- Gemini AI Assistant
+- Gemini AI Assistant (Server-side)
 - Local product artwork for reliable loading
-- Docker deployment
+- Docker deployment (Optimized for Cloud Run)
 
 ## Validation
-- Manual checks completed for search, cart add/remove, total price calculation, assistant response flow, and responsive product rendering.
-- Automated test tooling is not yet wired in this submission, so validation is currently manual.
+- **Automated Tests**: Basic App structure and concierge logic verified with Vitest.
+- **Manual Verification**: Search, cart operations, pricing, and AI assistant flow verified.
 
 ## Technology Stack
-- **Framework**: Vite + React
-- **Styling**: Vanilla CSS (CSS-in-JS and global tokens)
-- **AI Integration**: Google Gemini via `@google/generative-ai`
+- **Frontend**: Vite + React
+- **Backend**: Node.js + Express
+- **AI Integration**: Google Gemini via `@google/generative-ai` (Server-side)
+- **Styling**: Vanilla CSS
 - **Aesthetics**: Google Fonts (Outfit), CSS Backdrop Filters, Handcrafted SVG Icons.
 
 ## Assumptions Made
 - The demo focuses on the **Luxury Fashion** vertical within Retail.
-- Product visuals are shipped locally so the storefront remains stable even if third-party image hosts fail.
-- The Gemini assistant requires a valid `VITE_GEMINI_API_KEY`; without it, the UI stays in configuration mode.
+- Product visuals are shipped locally so the storefront remains stable.
+- The Gemini assistant requires a valid `GEMINI_API_KEY` environment variable.
 
 ---
 *Developed for the AMD SlingShot - Campus Days Hackathon.*
