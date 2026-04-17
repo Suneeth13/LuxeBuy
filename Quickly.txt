@@ -1,0 +1,118 @@
+Quickly
+Creatively
+Correctly
+
+
+Retail & E-commerce
+Create an intelligent solution that enhances the shopping experience or optimizes operations for retailers by using data, automation, or personalization techniques.
+
+
+
+Resources
+Your ultimate guide! Explore this section for best practices and valuable resources to maximize your experience and get the most out of this initiative.
+
+Prerequisites for making a Submission
+
+Before submitting, ensure the following:
+
+1. Google Antigravity is downloaded and set up → Refer: Google Antigravity Documentation
+
+2. Git is installed and configured on your system → Refer: Set up Git
+
+3. You have an active GitHub account → If you want to create a new account, refer to: Create a GitHub Account
+
+
+
+Important Rules
+
+ → You have a maximum of 3 submission attempts
+ → The repository size must be less than 1 MB
+ → The GitHub repository must be public
+ → The repository should contain only one branch (no multiple branches allowed)
+
+
+
+Steps to Make a Submission
+
+Go to GitHub and create a new repository
+How to guide refer: Creating a new repository - GitHub Docs 
+Ensure the repository is public
+Open Antigravity
+Clone the GitHub repository inside Antigravity
+Start prompting and coding using Antigravity
+Once satisfied with your progress:
+Push your code to the GitHub repository
+Ensure there are no multiple branches (all work should be in a single branch)
+After pushing the code:
+Copy the public GitHub repository link
+Go to the Submissions Tab (Link) and submit the public GitHub repository
+
+How to Deploy to Cloud Run 
+
+Refer: https://docs.cloud.google.com/run/docs/quickstarts/deploy-container
+
+
+How to Deploy to Cloud Run from a Git repository 
+
+Refer: https://docs.cloud.google.com/run/docs/quickstarts/deploy-continuously
+
+
+Guide to create new projects on GCP 
+
+Refer: https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects
+Instructions
+1. Before You Begin
+Make sure the following prerequisites are completed:
+
+Google Antigravity is downloaded and set up on your system
+Git is installed and configured
+You have an active GitHub account
+You are able to create and manage public repositories
+2. Important Rules
+You have a maximum of 2 submission attempts for the Warm Up Round
+You have a maximum of 4 submission attempts (For Actual Challenge Round)
+The repository size must be less than 1 MB
+The GitHub repository must be public
+The repository should contain only one branch
+Failure to follow these rules may result in your submission not being evaluated
+3. Challenge Expectations
+Your solution should demonstrate:
+
+Ability to build a smart, dynamic assistant
+Logical decision making based on user context
+Effective use of Google Services
+Practical and real-world usability
+Clean and maintainable code
+Participants must choose one of the provided challenge verticals and design their solution around that persona and logic.
+
+4. How to Work on Your Project
+Create a new repository on GitHub
+Ensure the repository is set to public
+Open Google Antigravity
+Clone your repository inside Antigravity
+Build your solution through prompting and coding
+Regularly commit and push your progress
+Keep all work within a single branch
+5. What to Submit
+Note: For detail guide on how to submit. Please refer to the document
+Link
+
+Your submission must include:
+
+A public GitHub repository link
+Complete project code inside the repository
+A README explaining:
+Your chosen vertical
+Approach and logic
+How the solution works
+Any assumptions made
+6. Evaluation Focus Areas
+Submissions will be reviewed on:
+
+Code Quality – structure, readability, maintainability
+Security – safe and responsible implementation
+Efficiency – optimal use of resources
+Testing – validation of functionality
+Accessibility – inclusive and usable design
+Google Services – meaningful integration of Google Services
+Close

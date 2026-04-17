@@ -1,0 +1,15 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1000" fill="#1A1715"/>
+  <rect x="48" y="48" width="704" height="904" rx="40" fill="url(#bg)"/>
+  <path d="M262 278L334 200H466L538 278L594 502L503 544L470 404L452 796H348L330 404L297 544L206 502L262 278Z" fill="#101114"/>
+  <path d="M348 200H452L424 312H376L348 200Z" fill="#F0E1C3" fill-opacity="0.95"/>
+  <path d="M386 312H414L452 796H348L386 312Z" fill="#0E0F12"/>
+  <text x="88" y="860" fill="#F2E4C6" font-family="Outfit, Arial, sans-serif" font-size="30" letter-spacing="6">MENSWEAR</text>
+  <text x="88" y="910" fill="white" font-family="Outfit, Arial, sans-serif" font-size="54" font-weight="700">ONYX SILK BLAZER</text>
+  <defs>
+    <linearGradient id="bg" x1="120" y1="92" x2="660" y2="916" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3A2D23"/>
+      <stop offset="1" stop-color="#191310"/>
+    </linearGradient>
+  </defs>
+</svg>

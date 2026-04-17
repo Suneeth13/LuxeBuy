@@ -1,0 +1,16 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1000" fill="#150E25"/>
+  <rect x="48" y="48" width="704" height="904" rx="40" fill="url(#bg)"/>
+  <path d="M400 214C441.974 214 476 179.974 476 138C476 96.0264 441.974 62 400 62C358.026 62 324 96.0264 324 138C324 179.974 358.026 214 400 214Z" fill="#E6D8F9" fill-opacity="0.16"/>
+  <path d="M364 232H436L462 352L580 806H220L338 352L364 232Z" fill="#6D2A8F"/>
+  <path d="M364 232H436L422 336H378L364 232Z" fill="#B787DA"/>
+  <path d="M338 352H462L514 806H286L338 352Z" fill="#541E71"/>
+  <text x="88" y="860" fill="#D7B5F2" font-family="Outfit, Arial, sans-serif" font-size="30" letter-spacing="6">EVENING WEAR</text>
+  <text x="88" y="910" fill="white" font-family="Outfit, Arial, sans-serif" font-size="54" font-weight="700">AZURE SILK GOWN</text>
+  <defs>
+    <linearGradient id="bg" x1="88" y1="80" x2="700" y2="934" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4A2470"/>
+      <stop offset="1" stop-color="#1E1233"/>
+    </linearGradient>
+  </defs>
+</svg>

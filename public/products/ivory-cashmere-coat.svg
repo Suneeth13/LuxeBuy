@@ -1,0 +1,18 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1000" fill="#D3CCC2"/>
+  <rect x="48" y="48" width="704" height="904" rx="40" fill="url(#bg)"/>
+  <path d="M288 242L362 176H438L512 242L578 806H472L438 388L418 460H382L362 388L328 806H222L288 242Z" fill="#F5EFE7"/>
+  <path d="M362 176H438L412 280H388L362 176Z" fill="#E4D8CA"/>
+  <path d="M388 280H412V806H388V280Z" fill="#D8CABB"/>
+  <circle cx="400" cy="418" r="10" fill="#CBB9A4"/>
+  <circle cx="400" cy="478" r="10" fill="#CBB9A4"/>
+  <circle cx="400" cy="538" r="10" fill="#CBB9A4"/>
+  <text x="88" y="860" fill="#877768" font-family="Outfit, Arial, sans-serif" font-size="30" letter-spacing="6">WOMENSWEAR</text>
+  <text x="88" y="910" fill="#3B3128" font-family="Outfit, Arial, sans-serif" font-size="54" font-weight="700">IVORY CASHMERE COAT</text>
+  <defs>
+    <linearGradient id="bg" x1="88" y1="72" x2="702" y2="930" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5EEE4"/>
+      <stop offset="1" stop-color="#CFC3B4"/>
+    </linearGradient>
+  </defs>
+</svg>

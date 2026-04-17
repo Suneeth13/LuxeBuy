@@ -1,0 +1,16 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1000" fill="#141413"/>
+  <rect x="48" y="48" width="704" height="904" rx="40" fill="url(#bg)"/>
+  <path d="M264 274H414V620H562C594.033 620 620 645.967 620 678V720H364C298.83 720 246 667.17 246 602V292C246 282.059 254.059 274 264 274Z" fill="#1C1D21"/>
+  <path d="M414 274H500L560 372V620H414V274Z" fill="#292B2F"/>
+  <path d="M280 720H620V760C620 782.091 602.091 800 580 800H320C297.909 800 280 782.091 280 760V720Z" fill="#6A5235"/>
+  <path d="M474 396H528" stroke="#85705A" stroke-width="14" stroke-linecap="round"/>
+  <text x="88" y="860" fill="#C2AA83" font-family="Outfit, Arial, sans-serif" font-size="30" letter-spacing="6">FOOTWEAR</text>
+  <text x="88" y="910" fill="white" font-family="Outfit, Arial, sans-serif" font-size="54" font-weight="700">OBSIDIAN CHELSEA BOOTS</text>
+  <defs>
+    <linearGradient id="bg" x1="96" y1="88" x2="694" y2="930" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#343636"/>
+      <stop offset="1" stop-color="#161717"/>
+    </linearGradient>
+  </defs>
+</svg>
